@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademi Astra - Aksesi Misi Zeta-01</title>
+    <style>
+        /* Palet Warna: Space Opera/Kosmik - Hitam Galaksi (#0A0A1F), Emas Komet (#FFD700), Ungu Nebula (#8A2BE2), Putih Bintang (#F0F8FF) */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap'); 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Font Scifi Geometris dan Sans-Serif Modern */
+            font-family: 'Rajdhani', sans-serif; 
+        }
+
+        body {
+            /* Latar Belakang Hitam Galaksi */
+            background-color: #0A0A1F; 
+            color: #F0F8FF; /* Putih Bintang */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            padding: 40px 20px;
+            /* Efek Bintang/Nebula */
+            background-image: radial-gradient(#8A2BE244 1px, transparent 1px), radial-gradient(#F0F8FF22 1px, transparent 1px);
+            background-size: 50px 50px, 20px 20px;
+        }
+
+        .data-console {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #1A1A3A; /* Biru Tua Kosmik */
+            border: 3px solid #FFD700; /* Border Emas Komet */
+            padding: 50px 60px;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5); /* Glow Ungu Nebula */
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 3px double #FFD700;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFD700; 
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #8A2BE2;
+            font-weight: 600;
+        }
+
+        .form-section {
+            margin-bottom: 35px;
+            border-left: 6px solid #8A2BE2;
+            padding-left: 20px;
+        }
+
+        .form-section h3 {
+            font-size: 2rem;
+            color: #F0F8FF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .form-section p {
+            font-size: 1.2rem;
+            color: #A9A9C9;
+        }
+        
+        .form-section strong {
+            color: #FFD700;
+            font-weight: 700;
+        }
+
+        .input-group label {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #8A2BE2;
+        }
+
+        .input-group input[type="text"], 
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #0A0A1F;
+            border: 1px solid #FFD700;
+            color: #F0F8FF;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 40px;
+            background-color: #FFD700;
+            color: #0A0A1F;
+            border: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #F0F8FF;
+            box-shadow: 0 0 15px #FFD700;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #8A2BE2;
+            font-size: 0.9rem;
+            color: #A9A9C9;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="data-console">
+        <header>
+            <h1>PROYEK JEDA-CAHAYA</h1>
+            <p>Formulir Aksesi Pra-Misi (Hanya untuk Inisiat Alpha-Tier)</p>
+        </header>
+
+        <form action="/submit_aksesi" method="POST">
+            <div class="form-section">
+                <h3>DATA INTI ASTRONAUT</h3>
+                <p>
+                    Semua identitas *non-kosmik* harus dihapus sebelum transmisi. Kami hanya mengakui **Kode Bintang** Anda.
+                </p>
+                <div class="input-group">
+                    <label for="kodeBintang">Kode Bintang (5 Karakter Alpha-Numerik):</label>
+                    <input type="text" id="kodeBintang" name="kodeBintang" required maxlength="5">
+                </div>
+                <div class="input-group">
+                    <label for="asalGalaksi">Asal Galaksi/Sektor (Tulis 'TERRA' jika dari Bumi):</label>
+                    <input type="text" id="asalGalaksi" name="asalGalaksi" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>KUALIFIKASI ENERGI</h3>
+                <p>
+                    Misi ke Sektor Zeta-01 membutuhkan resonansi jiwa yang stabil. Kegagalan akan mengakibatkan **Diskoneksi Materi**.
+                </p>
+                <div class="input-group">
+                    <label for="pengalamanVoid">Pengalaman Terbang *Void* (Dalam Siklus Solar):</label>
+                    <input type="text" id="pengalamanVoid" name="pengalamanVoid" placeholder="Minimal 10 Siklus" required>
+                </div>
+                <div class="input-group">
+                    <label for="resonansiJiwa">Resonansi Jiwa yang Diukur:</label>
+                    <select id="resonansiJiwa" name="resonansiJiwa" required>
+                        <option value="">-- Pilih Tingkat Resonansi --</option>
+                        <option value="stabil">Stabil (Beta)</option>
+                        <option value="gelisah">Gelisah (Gamma)</option>
+                        <option value="kristal">Kristal Murni (Alpha)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>DEKLARASI KEPATUHAN</h3>
+                <p>
+                    Saya bersumpah bahwa saya bersedia untuk **melupakan** semua yang saya tahu demi *Cahaya Baru*.
+                </p>
+                <div class="input-group">
+                    <label for="deklarasi">Ketik "ALPHA" untuk mengunci keputusan ini:</label>
+                    <input type="text" id="deklarasi" name="deklarasi" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">TRANSMISIKAN DATA KE GERBANG GALAKSI</button>
+        </form>
+
+        <footer>
+            AKADEMI ASTRA // Semua data adalah milik **The Stellar Authority**. Jangan melihat ke belakang.
+        </footer>
+    </div>
+</body>
+</html>
